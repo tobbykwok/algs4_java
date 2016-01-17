@@ -6,11 +6,11 @@ import java.util.Iterator;
  * Created by Tobby on 2016/1/6.
  */
 public class Queue<Item> implements Iterable<Item>{
-    private Node first;
-    private Node last;
-    private class Node{
+    private Node<Item> first;
+    private Node<Item> last;
+    private static class Node<Item>{
         Item item;
-        Node next;
+        Node<Item> next;
     }
     private int N;
 
@@ -50,7 +50,7 @@ public class Queue<Item> implements Iterable<Item>{
     }
 
     private class QueueIterator implements Iterator<Item>{
-        private Node current = first;
+        private Node<Item> current = first;
         @Override
         public boolean hasNext() {
             return current != null;
